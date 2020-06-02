@@ -50,6 +50,7 @@ destP[2].addEventListener('wheel',wheelColor)
 //dblclick
 
 document.querySelector('footer').addEventListener('dblclick', event =>{
-    console.log(event.target)
     event.target.style.backgroundColor = 'red'
 })
+
+//
