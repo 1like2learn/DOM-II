@@ -2,22 +2,38 @@
 //#feba4d
 
 //click
-const h1 =document.querySelector('h1')
+document.querySelector('.nav-container').addEventListener('click', event => {
+
+    event.currentTarget.style.backgroundColor ='green'
+})
+
+const h1 = document.querySelector('h1')
 h1.addEventListener('click', event => {
-    event.target.style.color ='green'
+    event.stopPropagation()
+    event.target.style.backgroundColor ='green'
 })
 
 //mouseover
 const navAnchor = document.querySelectorAll('.nav a')
 
-navAnchor[0].addEventListener('mouseover', event => {
+function turnBlue(event){
     event.target.style.color = 'blue'
-})
+    event.preventDefault()
+}
+
+navAnchor[0].addEventListener('mouseover', turnBlue)
+navAnchor[1].addEventListener('mouseover', turnBlue)
+navAnchor[2].addEventListener('mouseover', turnBlue)
+navAnchor[3].addEventListener('mouseover', turnBlue)
 
 //mouseout
-navAnchor[0].addEventListener('mouseout', event =>{
+function turnBlack(event){
     event.target.style.color = 'black'
-})
+}
+navAnchor[0].addEventListener('mouseout', turnBlack)
+navAnchor[1].addEventListener('mouseout', turnBlack)
+navAnchor[2].addEventListener('mouseout', turnBlack)
+navAnchor[3].addEventListener('mouseout', turnBlack)
 
 //scroll
 // console.log(document.querySelector('header'))
@@ -55,4 +71,15 @@ document.querySelector('.content-destination textarea').addEventListener('select
     event.target.style.color = 'orange'
 })
 
-//keydown
+//keyup
+document.addEventListener('keyup', event =>{
+    if (event.key === 'e'){
+        document.querySelector('.intro h2').style.color = 'navy'
+    }
+})
+
+//resize
+window.addEventListener('resize', event =>{
+    
+    document.querySelector('h1').style.backgroundColor='white'
+})
