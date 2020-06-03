@@ -35,12 +35,9 @@ window.addEventListener('load', event=>{
 //wheel
 function wheelColor (event) {
 
-    event.preventDefault()
     event.target.style.backgroundColor = 'purple'
     event.target.style.color = 'white'
 }
-const destSection = document.querySelector('.content-pick')
-destSection.addEventListener('wheel', wheelColor)
 
 const destP = document.querySelectorAll('div.destination p')
 destP[0].addEventListener('wheel',wheelColor)
@@ -53,4 +50,9 @@ document.querySelector('footer').addEventListener('dblclick', event =>{
     event.target.style.backgroundColor = 'red'
 })
 
-//
+//select
+document.querySelector('.content-destination textarea').addEventListener('select', event =>{
+    event.target.style.color = 'orange'
+})
+
+//keydown
